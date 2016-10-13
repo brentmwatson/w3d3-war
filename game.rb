@@ -1,10 +1,10 @@
 require_relative "deck"  # => true
-include Comparable
+include Comparable       # => Object
 
 class Game
-  attr_accessor :player1_deck,
-                :player2_deck,  # => nil
-                :play_war
+  attr_accessor :player1_deck,  # => :player1_deck
+                :player2_deck,  # => :player2_deck
+                :play_war       # => nil
 
   def initialize
     self.player1_deck = Deck.new
@@ -16,10 +16,9 @@ class Game
     play_round
     decide_winner
     ask_for_rematch
-  end
+  end                # => :play_war
 
   def play_round
-
     if self.player1_deck.cards.value > self.player1_deck.cards.value
       round_winner = player1
     elsif self.player1_deck.cards.value < self.player1_deck.cards.value
@@ -27,11 +26,11 @@ class Game
     else
       round_winner = "war"
     end
-
     self.player1_deck.shift
     self.player2_deck.shift
+  end                                     # => :play_round
 
-  end
+
   def total_round_outcome (round_winner)
     if round_winner == player1
       round_winner.reduce(:+)
@@ -40,7 +39,7 @@ class Game
     else
       round_winner.reduce(:+)
     end
-  end
+  end                                     # => :total_round_outcome
 
   # def overall_winner
   #   if total("player1") > total ("player2")
@@ -64,4 +63,4 @@ class Game
 # player 2 deck shift
 
 
-end  # => :initialize
+end  # => :total_round_outcome
