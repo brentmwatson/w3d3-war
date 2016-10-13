@@ -14,7 +14,7 @@ class Game
   def play_war
     promt
     play_round
-    # decide_winner
+    overall_winner
     # ask_for_rematch
   end
 
