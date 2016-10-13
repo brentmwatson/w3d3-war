@@ -13,30 +13,43 @@ class Game
 
   def play_war
     promt
-    play_card
+    play_round
     decide_winner
     ask_for_rematch
   end
 
-  def play_card
+  def play_round
 
     if self.player1_deck.cards.value > self.player1_deck.cards.value
-      play_winner = player1
+      round_winner = player1
     elsif self.player1_deck.cards.value < self.player1_deck.cards.value
-      play_winner = player2
+      round_winner = player2
     else
-      play winner = "war"
+      round_winner = "war"
     end
 
     self.player1_deck.shift
     self.player2_deck.shift
 
   end
-
-
-  def decide_winner
-
+  def total_round_outcome (round_winner)
+    if round_winner == player1
+      round_winner.reduce(:+)
+    elsif round_winner == player2
+      round_winner.reduce(:+)
+    else
+      round_winner.reduce(:+)
+    end
   end
+
+  # def overall_winner
+  #   if total("player1") > total ("player2")
+  #     "player1"
+  #   else
+  #     "player2"
+  #   end
+  #
+  # end
   # player 1 winning
   # player 2 winnings
   # of wars
