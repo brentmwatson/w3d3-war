@@ -1,14 +1,14 @@
 class Card
 
-  attr_accessor :suit,  # => :suit
-                :face,  # => :face
-                :value  # => nil
+  attr_accessor :suit,
+                :face,
+                :value
 
   def initialize(face,suit)
     self.face = face
     self.suit = suit
     determine_value
-  end                        # => :initialize
+  end
 
   def determine_value
     if face == "A"
@@ -24,9 +24,3 @@ class Card
     end
   end
 end
-
-# ~> NoMethodError
-# ~> undefined method `each' for nil:NilClass
-# ~>
-# ~> /Users/brentmwatson/documents/TheIronYard/w3d3-war/card.rb:12:in `<class:Card>'
-# ~> /Users/brentmwatson/documents/TheIronYard/w3d3-war/card.rb:1:in `<main>'

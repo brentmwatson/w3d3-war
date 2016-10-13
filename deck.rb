@@ -11,7 +11,6 @@ class Deck
   end
 
   def make_cards
-    # Card.new
     face = %w(2 3 4 5 6 7 8 9 10 J Q K A)
     suit = %w(spade club heart diamond)
 
